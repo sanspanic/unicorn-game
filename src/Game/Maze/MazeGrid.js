@@ -42,6 +42,7 @@ const MazeGrid = () => {
 
   //draws new maze after maze ID changes
   useEffect(() => {
+    if (mazeId === "") return;
     const setUpNewMaze = async () => {
       try {
         //retrieves array where each array item represents 1 maze grid cell
@@ -98,8 +99,9 @@ const MazeGrid = () => {
   //checks if game is won or lost
   const checkForGameOver = (res) => {
     if (res.state === "won") {
-      console.log("Attempting to change game data state");
       setGameData({ ...gameData, status: "won" });
+    } else if (res.state === "over") {
+      setGameData({ ...gameData, status: "over" });
     }
   };
 

@@ -12,7 +12,7 @@ const Game = () => {
       {gameData.status === "setup" && <SetupPage />}
       {gameData.status === "active" && <MazeWrapper />}
       {gameData.status === "won" && <WinPage />}
-      {gameData.status === "lose" && <LosePage />}
+      {gameData.status === "over" && <LosePage />}
     </div>
   );
 };
