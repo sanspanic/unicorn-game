@@ -52,7 +52,7 @@ const SetupPage = () => {
         ></input>
       </div>
       <div>
-        <label htmlFor="size">Size</label>
+        <label htmlFor="size">Size {formData.size}</label>
         <input
           type="range"
           id="size"

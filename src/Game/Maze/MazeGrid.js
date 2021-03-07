@@ -22,11 +22,8 @@ const MazeGrid = () => {
     const getMazeID = async (data) => {
       try {
         const res = await UnicornApi.getNewMaze(data);
-        window.localStorage.setItem("mazeId", res);
         setMazeId(res);
         console.log("NEW MAZE ID RETRIEVED: ", res);
-        //getMazeID(res);
-        //setUpMaze(res);
       } catch (e) {
         console.log(e);
       }
@@ -40,12 +37,13 @@ const MazeGrid = () => {
     });
   }, []);
 
-  //sets up new maze grid outline after maze ID changes
+  //draws new maze after maze ID changes
   useEffect(() => {
     const setUpNewMaze = async () => {
       try {
         //retrieves array where each array item represents 1 maze grid cell
-        const res = await UnicornApi.getMazeCurrentState();
+        const res = await UnicornApi.getMazeCurrentState(mazeId);
+        console.log("GRID DATA BEFORE HELPER FUNCTION: ", res.data);
         //adds east, south borders + index number to array items
         const completeGridData = addProps(res.data, parseInt(gameData.size));
         console.log(

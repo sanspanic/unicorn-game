@@ -4,7 +4,6 @@ const BASE_URL = "https://ponychallenge.trustpilot.com";
 //static API class tying together methods used to communicate with API
 
 class UnicornApi {
-  static mazeId = window.localStorage.getItem("mazeId");
   static async request(endpoint, data = {}, method = "get") {
     console.log(
       "API call to endpoint",
@@ -36,8 +35,8 @@ class UnicornApi {
   }
 
   // [GET] /pony-challenge/maze/{maze-id} -> get maze current state
-  static async getMazeCurrentState() {
-    let res = await this.request(`pony-challenge/maze/${this.mazeId}`);
+  static async getMazeCurrentState(mazeId) {
+    let res = await this.request(`pony-challenge/maze/${mazeId}`);
     return res;
   }
 
@@ -48,12 +47,6 @@ class UnicornApi {
       data,
       "post"
     );
-    return res;
-  }
-
-  // [GET] /pony-challenge/maze/{maze-id}/print -> get visual of the current state of the maze
-  static async getVisual() {
-    let res = await this.request(`pony-challenge/maze/${this.mazeId}/print`);
     return res;
   }
 }
