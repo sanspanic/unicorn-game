@@ -6,9 +6,10 @@ import { v4 as uuid } from "uuid";
 import GridCell from "./GridCell";
 import "./Maze.css";
 import MoveButtons from "./Buttons/MoveButtons";
+import { data } from "autoprefixer";
 
 const MazeGrid = () => {
-  const { gameData } = useContext(GameContext);
+  const { gameData, setGameData } = useContext(GameContext);
   const [mazeGrid, setMazeGrid] = useState([]);
   const [mazeId, setMazeId] = useState("");
   const [spritePositions, setSpritePositions] = useState({});
@@ -75,6 +76,7 @@ const MazeGrid = () => {
         } else {
           //TODO: handle illegal move
         }
+        checkForGameOver(res);
       } catch (e) {
         console.log(e);
       }
@@ -90,6 +92,14 @@ const MazeGrid = () => {
       console.log("UPDATED SPRITE POSITIONS AFTER MOVE: ", spritePositions);
     } catch (e) {
       console.log(e);
+    }
+  };
+
+  //checks if game is won or lost
+  const checkForGameOver = (res) => {
+    if (res.state === "won") {
+      console.log("Attempting to change game data state");
+      setGameData({ ...gameData, status: "won" });
     }
   };
 

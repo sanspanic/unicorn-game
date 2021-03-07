@@ -11,7 +11,7 @@ const Game = () => {
     <div>
       {gameData.status === "setup" && <SetupPage />}
       {gameData.status === "active" && <MazeWrapper />}
-      {gameData.status === "win" && <WinPage />}
+      {gameData.status === "won" && <WinPage />}
       {gameData.status === "lose" && <LosePage />}
     </div>
   );
