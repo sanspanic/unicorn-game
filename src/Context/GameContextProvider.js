@@ -6,6 +6,7 @@ const GameContextProvider = ({ children }) => {
     status: "setup",
     difficulty: 0,
     size: 15,
+    name: "",
   };
   const [gameData, setGameData] = useState(initialState);
 
