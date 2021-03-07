@@ -4,7 +4,7 @@ import GameContextProvider from "./Context/GameContextProvider";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App p-5">
       <GameContextProvider>
         <Routes />
       </GameContextProvider>

@@ -1,31 +1,37 @@
 import React from "react";
+import {
+  ArrowFatLinesUp,
+  ArrowFatLinesDown,
+  ArrowFatLinesLeft,
+  ArrowFatLinesRight,
+} from "phosphor-react";
 
 const MoveButtons = ({ handleMove }) => {
   return (
     <div className="flex justify-center gap-10 mb-2">
       <button
-        className="border-2 border-blue-300 rounded bg-blue-400 p-1"
+        className="gradient-pink border-2 shadow-xl border-purple-600 text-white px-3 py-2 rounded bg-blue-400 p-1"
         onClick={() => handleMove("east")}
       >
-        Move right
+        <ArrowFatLinesRight size={24} />
       </button>
       <button
-        className="border-2 border-blue-300 rounded bg-blue-400 p-1"
+        className="gradient-pink border-2 shadow-xl border-purple-600 text-white px-3 py-2 rounded bg-blue-400 p-1"
         onClick={() => handleMove("west")}
       >
-        Move left
+        <ArrowFatLinesLeft size={24} />
       </button>
       <button
-        className="border-2 rounded border-blue-300 bg-blue-400 p-1"
+        className="gradient-pink border-2 shadow-xl rounded border-purple-600 text-white px-3 py-2 bg-blue-400 p-1"
         onClick={() => handleMove("south")}
       >
-        Move down
+        <ArrowFatLinesDown size={24} />
       </button>
       <button
-        className="border-2 rounded border-blue-300 bg-blue-400 p-1"
+        className="gradient-pink border-2 shadow-xl  rounded border-purple-600 text-white px-3 py-2 bg-blue-400 p-1"
         onClick={() => handleMove("north")}
       >
-        Move up
+        <ArrowFatLinesUp size={24} />
       </button>
     </div>
   );

@@ -7,7 +7,8 @@ const MazeWrapper = () => {
   return (
     <div>
       <h2 className="text-center py-10 font-mono">
-        Help {gameData.name} reach the rainbow!{" "}
+        Help <span className="text-pink-600">{gameData.name}</span> reach the
+        rainbow!{" "}
       </h2>
       <div className="mx-auto sm:w-9/12 md:w-6/12 lg:w-5/12 xl:w-4/12">
         <MazeGrid />

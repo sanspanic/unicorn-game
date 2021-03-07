@@ -1,5 +1,8 @@
 import React, { useState, useContext } from "react";
 import GameContext from "../../Context/GameContext";
+import Form from "./Form";
+import SmallUnicorn from "../../Assets/Imgs/smallUnicorn.png";
+import Maze from "../../Assets/Imgs/Maze.png";
 
 const SetupPage = () => {
   const { setGameData } = useContext(GameContext);
@@ -22,49 +25,33 @@ const SetupPage = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="name">Name: </label>
-        <select
-          id="name"
-          name="name"
-          className="px-4 py-3 rounded-xl"
-          onChange={handleChange}
-        >
-          <option value="Pinkie Pie">Pinkie Pie</option>
-          <option value="Twilight Sparkle">Twilight Sparkle</option>
-          <option value="Fluttershy">Fluttershy</option>
-          <option value="Applejack">Applejack</option>
-          <option value="Rainbow Dash">Rainbow Dash</option>
-          <option value="Rarity">Rarity</option>
-        </select>
+    <div>
+      <h1 className="font-mono text-4xl text-center py-10 text-pink-600 font-black">
+        Game Setup
+      </h1>
+      <div className="md:px-10 grid grid-cols-8 gap-4 items-center">
+        <div className="col-start-2 col-span-6 md:col-start-2 md:col-span-3">
+          <div className="grid grid-cols-2 gap-4 items-center py-5">
+            <p className="font-mono text-sm md:text-base">
+              Help the <span className="text-pink-600">Unicorn</span> navigate
+              the maze towards the Rainbow.
+            </p>
+            <img className="w-10/12" src={Maze}></img>
+          </div>
+          <div className="grid grid-cols-2 gap-4 items-center py-5">
+            <img className="w-6/12" src={SmallUnicorn}></img>
+            <p className="font-mono text-sm md:text-base">
+              Beware of the Skull Monster! 💀
+            </p>
+          </div>
+        </div>
+        <Form
+          handleSubmit={handleSubmit}
+          handleChange={handleChange}
+          formData={formData}
+        />
       </div>
-      <div>
-        <label htmlFor="difficulty">Difficulty</label>
-        <input
-          type="range"
-          id="difficulty"
-          name="difficulty"
-          min={0}
-          max={10}
-          onChange={handleChange}
-          value={formData.difficulty}
-        ></input>
-      </div>
-      <div>
-        <label htmlFor="size">Size {formData.size}</label>
-        <input
-          type="range"
-          id="size"
-          name="size"
-          min={15}
-          max={25}
-          onChange={handleChange}
-          value={formData.size}
-        ></input>
-      </div>
-      <button>Start! </button>
-    </form>
+    </div>
   );
 };
 
