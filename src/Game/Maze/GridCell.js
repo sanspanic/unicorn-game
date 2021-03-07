@@ -1,7 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 
-const GridCell = ({ borders, index }) => {
+const GridCell = ({ borders, index, spritePositions }) => {
   //conditionally renders borders around cell based on borders prop
   const bordersClass = classNames({
     "Grid-cell": true,
@@ -11,7 +11,13 @@ const GridCell = ({ borders, index }) => {
     "border-south": borders.includes("south"),
   });
 
-  return <div className={bordersClass}></div>;
+  return (
+    <div className={bordersClass}>
+      {index === spritePositions.end ? "🌈" : null}
+      {index === spritePositions.unicorn ? "🦄" : null}
+      {index === spritePositions.monster ? "💀" : null}
+    </div>
+  );
 };
 
 export default GridCell;

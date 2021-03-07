@@ -16,3 +16,12 @@ export const addProps = (arr, size) => {
   }
   return arr;
 };
+
+//retrieves sprites positions (unicorn, monster, end) from API call result
+export const getSpritePositions = (res) => {
+  return {
+    end: res["end-point"][0],
+    monster: res.domokun[0],
+    unicorn: res.pony[0],
+  };
+};

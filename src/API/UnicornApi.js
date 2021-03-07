@@ -41,12 +41,8 @@ class UnicornApi {
   }
 
   // [POST] /pony-challenge/maze/{maze-id} -> make next move in the maze
-  static async makeMove(data) {
-    let res = await this.request(
-      `pony-challenge/maze/${this.mazeId}`,
-      data,
-      "post"
-    );
+  static async makeMove(data, mazeId) {
+    let res = await this.request(`pony-challenge/maze/${mazeId}`, data, "post");
     return res;
   }
 }
