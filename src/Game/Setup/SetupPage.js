@@ -3,7 +3,7 @@ import GameContext from "../../Context/GameContext";
 
 const SetupPage = () => {
   const { setGameData } = useContext(GameContext);
-  const initialState = { name: "Pinkie Pie", difficulty: "0", size: "15" };
+  const initialState = { name: "Pinkie Pie", difficulty: 0, size: 15 };
   const [formData, setFormData] = useState(initialState);
 
   const handleChange = (e) => {
@@ -45,8 +45,8 @@ const SetupPage = () => {
           type="range"
           id="difficulty"
           name="difficulty"
-          min="0"
-          max="10"
+          min={0}
+          max={10}
           onChange={handleChange}
           value={formData.difficulty}
         ></input>
@@ -57,8 +57,8 @@ const SetupPage = () => {
           type="range"
           id="size"
           name="size"
-          min="15"
-          max="25"
+          min={15}
+          max={25}
           onChange={handleChange}
           value={formData.size}
         ></input>
