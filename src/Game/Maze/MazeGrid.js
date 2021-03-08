@@ -29,7 +29,7 @@ const MazeGrid = () => {
 
   //starts new game
   useEffect(() => {
-    //retrieves maze ID and saves it to localStorage
+    //retrieves maze ID
     const getMazeID = async (data) => {
       try {
         const res = await UnicornApi.getNewMaze(data);
@@ -72,14 +72,6 @@ const MazeGrid = () => {
     };
     setUpNewMaze();
   }, [mazeId]);
-
-  //sets focus on maze grid to enable hotkeys
-  //unfortunately useRef didn't work so I'm using, inappropriately, useEffect
-  /*   useEffect(() => {
-    if (mazeId === "") return;
-    const Maze = document.querySelector("[tabindex='-1']");
-    Maze.focus();
-  }, [mazeId]); */
 
   /*   //handles move
   const handleMove = (direction) => {

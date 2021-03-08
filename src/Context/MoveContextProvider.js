@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import MoveContext from "./MoveContext";
 import UnicornApi from "../API/UnicornApi";
 import GameContext from "./GameContext";
@@ -8,6 +8,15 @@ const MoveContextProvider = ({ children }) => {
   const [spritePositions, setSpritePositions] = useState({});
   const { gameData, setGameData } = useContext(GameContext);
   const [mazeId, setMazeId] = useState("");
+
+  //sets focus on maze grid to enable hotkeys
+  //unfortunately useRef didn't work so I'm using, inappropriately, useEffect
+  useEffect(() => {
+    if (mazeId === "") return;
+    console.log("SELECTING DOM ELEMENT TO FOCUS, mazeId: ", mazeId);
+    const Maze = document.querySelector("[tabindex='-1']");
+    Maze.focus();
+  }, [mazeId]);
 
   //handles move
   const handleMove = (direction) => {

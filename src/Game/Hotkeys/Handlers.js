@@ -31,7 +31,7 @@ const Keys = ({ children }) => {
   };
 
   return (
-    <HotKeys keyMap={keyMap} handlers={handlers}>
+    <HotKeys className="outline-none" keyMap={keyMap} handlers={handlers}>
       {children}
     </HotKeys>
   );
