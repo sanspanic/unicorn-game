@@ -56,7 +56,7 @@ const Form = ({ handleSubmit, handleChange, formData }) => {
           ></input>
         </div>
         <button className="mx-auto gradient-pink px-3 py-2 text-white font-mono rounded shadow-xl border-4 border-purple-600">
-          Start!{" "}
+          Start Game!{" "}
         </button>
       </form>
     </div>

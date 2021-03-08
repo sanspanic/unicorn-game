@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import classNames from "classnames";
 
 const GridCell = ({ borders, index, spritePositions }) => {
   //conditionally renders borders around cell based on borders prop
-  const bordersClass = classNames({
+  const gridCellClass = classNames({
     "Grid-cell": true,
     "border-east": borders.includes("east"),
     "border-west": borders.includes("west"),
@@ -12,7 +12,7 @@ const GridCell = ({ borders, index, spritePositions }) => {
   });
 
   return (
-    <div className={bordersClass}>
+    <div className={gridCellClass}>
       {index === spritePositions.end ? "🌈" : null}
       {index === spritePositions.unicorn ? "🦄" : null}
       {index === spritePositions.monster ? "💀" : null}

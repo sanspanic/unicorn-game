@@ -10,7 +10,7 @@ const GameContextProvider = ({ children }) => {
   };
   const [gameData, setGameData] = useState(initialState);
 
-  //restarts game by setting gameData.status back to "setup"
+  //restarts game by setting gameData.status back to "setup" & redirecting to homepage
   const playAgain = () => {
     setGameData({ ...gameData, status: "setup" });
   };

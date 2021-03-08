@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import Unicorn from "../Assets/Imgs/Unicorn.png";
+import GameContext from "../Context/GameContext";
 
 const Home = () => {
+  const { gameData, setGameData } = useContext(GameContext);
+  const startGameSetup = () => {
+    setGameData({ ...gameData, status: "setup" });
+  };
   return (
     <>
       <h1 className="font-black text-pink-600 text-4xl py-5 sm:py-10">

@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import GameContext from "../Context/GameContext";
-import SetupPage from "./Setup/SetupPage";
+import Home from "../Home/Home";
 import WinPage from "./Win/WinPage";
 import LosePage from "./Lose/LosePage";
 import MazeWrapper from "./Maze/MazeWrapper";
 import "./Game.css";
+import SetupPage from "./Setup/SetupPage";
 
 const Game = () => {
   const { gameData } = useContext(GameContext);

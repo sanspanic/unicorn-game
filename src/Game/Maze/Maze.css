@@ -7,6 +7,10 @@
   height: 2em;
 }
 
+.small-cell .Grid-cell {
+  height: 1.5em;
+}
+
 .Grid-cell.border-east {
   border-right: 2px solid gray;
 }
