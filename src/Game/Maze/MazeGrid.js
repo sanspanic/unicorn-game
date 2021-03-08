@@ -8,6 +8,7 @@ import "./Maze.css";
 import MoveButtons from "./Buttons/MoveButtons";
 import Keys from "../Hotkeys/Handlers";
 import MoveContext from "../../Context/MoveContext";
+import Bump from "../../Assets/Audio/bump.wav";
 
 const MazeGrid = () => {
   const { gameData, setGameData } = useContext(GameContext);
@@ -21,6 +22,12 @@ const MazeGrid = () => {
     spritePositions,
     setSpritePositions,
   } = useContext(MoveContext);
+
+  const audio = useRef();
+  const playSound = () => {
+    console.log(audio.current);
+    audio.current.play();
+  };
 
   //determines size of maze based on user input saved in context
   const gridStyle = {
@@ -73,51 +80,10 @@ const MazeGrid = () => {
     setUpNewMaze();
   }, [mazeId]);
 
-  /*   //handles move
-  const handleMove = (direction) => {
-    const move = async (data) => {
-      try {
-        const res = await UnicornApi.makeMove(data, mazeId);
-        console.log("MADE A MOVE: ", res);
-        //if (res.state === "won") setGameState("won");
-        if (res["state-result"] === "Move accepted") {
-          updatePositions();
-        } else {
-          //TODO: handle illegal move
-        }
-        checkForGameOver(res);
-      } catch (e) {
-        console.log(e);
-      }
-    };
-    move({ direction });
-  };
-
-  //updates positions of sprites following a move
-  const updatePositions = async () => {
-    try {
-      const res = await UnicornApi.getMazeCurrentState(mazeId);
-      setSpritePositions(getSpritePositions(res));
-      console.log("UPDATED SPRITE POSITIONS AFTER MOVE: ", spritePositions);
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
-  //checks if game is won or lost
-  const checkForGameOver = (res) => {
-    if (res.state === "won") {
-      setGameData({ ...gameData, status: "won" });
-    } else if (res.state === "over") {
-      setGameData({ ...gameData, status: "over" });
-    }
-  }; */
-
   return (
     <>
       <Keys>
         <MoveButtons handleMove={handleMove} />
-
         <div className="Maze-grid mx-auto text-center" style={gridStyle}>
           {mazeGrid.map((arr) => (
             <GridCell

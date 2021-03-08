@@ -20,7 +20,7 @@ const MazeWrapper = () => {
     <div className="font-mono text-center">
       <h2 className="pt-10 ">
         Help <span className="text-pink-600">{gameData.name}</span> reach the
-        rainbow!{" "}
+        rainbow! Move using arrows, A, W, S, D or buttons.
       </h2>
       <p className="text-sm  pb-10">
         <ArrowBendUpLeft className="inline " size={24} />
