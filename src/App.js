@@ -6,7 +6,7 @@ import AudioContextProvider from "./Context/AudioContextProvider";
 
 function App() {
   return (
-    <div className="App p-5">
+    <div className="App ">
       <GameContextProvider>
         <AudioContextProvider>
           <MoveContextProvider>

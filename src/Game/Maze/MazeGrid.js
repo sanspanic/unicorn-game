@@ -69,7 +69,10 @@ const MazeGrid = () => {
     <>
       <Keys>
         <MoveButtons handleMove={handleMove} />
-        <div className="Maze-grid mx-auto text-center" style={gridStyle}>
+        <div
+          className="Maze-grid mx-auto text-center bg-white bg-opacity-60"
+          style={gridStyle}
+        >
           {mazeGrid.map((arr) => (
             <GridCell
               key={uuid()}

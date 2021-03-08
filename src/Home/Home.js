@@ -9,7 +9,7 @@ const Home = () => {
     setGameData({ ...gameData, status: "setup" });
   };
   return (
-    <>
+    <div className="p-5">
       <h1 className="font-black text-pink-600 text-4xl py-5 sm:py-10">
         Hi. I am a Unicorn.{" "}
       </h1>
@@ -45,7 +45,7 @@ const Home = () => {
           </Link>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

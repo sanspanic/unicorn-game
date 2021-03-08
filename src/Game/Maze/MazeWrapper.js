@@ -9,7 +9,7 @@ const MazeWrapper = () => {
   //gameData.size <= 18 sm:w-9/12 md:w-6/12 lg:w-5/12 xl:w-4/12
 
   const mazeWidthClasses = classNames({
-    "mx-auto": true,
+    "mx-auto p-3": true,
     "sm:w-9/12 md:w-7/12 lg:w-5/12 xl:w-4/12": gameData.size <= 17,
     "md:w-8/12 lg:w-6/12 xl:w-5/12": gameData.size > 17 && gameData.size <= 20,
     "md:w-10/12 lg:w-7/12 xl:w-6/12": gameData.size > 20 && gameData.size <= 23,
@@ -17,7 +17,7 @@ const MazeWrapper = () => {
   });
 
   return (
-    <div className="font-mono text-center">
+    <div className="setup-bg md:h-screen font-mono text-center">
       <h2 className="pt-10 ">
         Help <span className="text-pink-600">{gameData.name}</span> reach the
         rainbow! Move using arrows, A, W, S, D or buttons.
