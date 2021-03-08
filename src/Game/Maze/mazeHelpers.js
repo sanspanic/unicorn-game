@@ -1,4 +1,4 @@
-//adds "east" and "south" to grid data array wherever appropriate
+//adds index number and "east" and "south" to grid data array wherever appropriate
 //"east" and "south" used to render borders in GridCell.js
 //index used to track sprite positions in GridCell.js
 export const addProps = (arr, size) => {

@@ -12,17 +12,17 @@
 }
 
 .Grid-cell.border-east {
-  border-right: 2px solid gray;
+  border-right: 2px solid black;
 }
 
 .Grid-cell.border-west {
-  border-left: 2px solid gray;
+  border-left: 2px solid black;
 }
 
 .Grid-cell.border-north {
-  border-top: 2px solid gray;
+  border-top: 2px solid black;
 }
 
 .Grid-cell.border-south {
-  border-bottom: 2px solid gray;
+  border-bottom: 2px solid black;
 }

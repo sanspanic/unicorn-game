@@ -13,19 +13,15 @@ const Keys = ({ children }) => {
 
   const handlers = {
     MOVE_UP: (event) => {
-      console.log("Move up hotkey called!");
       handleMove("north");
     },
     MOVE_DOWN: (event) => {
-      console.log("Move down hotkey called!");
       handleMove("south");
     },
     MOVE_LEFT: (event) => {
-      console.log("Move left hotkey called!");
       handleMove("west");
     },
     MOVE_RIGHT: (event) => {
-      console.log("Move right hotkey called!");
       handleMove("east");
     },
   };

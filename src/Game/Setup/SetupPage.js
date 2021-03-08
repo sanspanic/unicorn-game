@@ -21,7 +21,6 @@ const SetupPage = () => {
     e.preventDefault();
     setGameData({ ...formData, status: "active" });
     setFormData(initialState);
-    //type === "snacks" ? history.push("/snacks") : history.push("/drinks");
   };
 
   return (

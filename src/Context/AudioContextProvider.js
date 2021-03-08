@@ -13,25 +13,21 @@ const AudioContextProvider = ({ children }) => {
 
   //plays when unicorn makes illegal move
   const playIllegal = () => {
-    console.log("Calling playLegal");
     bumpAudio.current.play();
   };
 
   //plays when unicorn makes legal move
   const playLegal = () => {
-    console.log("Calling playIllegal");
     moveAudio.current.play();
   };
 
   //plays on game over
   const playGameOver = () => {
-    console.log("Calling playGameOver");
     loseAudio.current.play();
   };
 
   //plays on game won
   const playGameWon = () => {
-    console.log("Calling playGameWon");
     winAudio.current.play();
   };
 

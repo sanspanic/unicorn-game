@@ -17,7 +17,6 @@ const MoveContextProvider = ({ children }) => {
   //unfortunately useRef didn't work so I'm using, inappropriately, useEffect
   useEffect(() => {
     if (mazeId === "") return;
-    console.log("SELECTING DOM ELEMENT TO FOCUS, mazeId: ", mazeId);
     const Maze = document.querySelector("[tabindex='-1']");
     Maze.focus();
   }, [mazeId]);
@@ -27,9 +26,6 @@ const MoveContextProvider = ({ children }) => {
     const move = async (data) => {
       try {
         const res = await UnicornApi.makeMove(data, mazeId);
-        console.log("MADE A MOVE: ", res);
-
-        //if (res.state === "won") setGameState("won");
         if (res["state-result"] === "Move accepted") {
           playLegal();
           updatePositions();
@@ -49,7 +45,6 @@ const MoveContextProvider = ({ children }) => {
     try {
       const res = await UnicornApi.getMazeCurrentState(mazeId);
       setSpritePositions(getSpritePositions(res));
-      console.log("UPDATED SPRITE POSITIONS AFTER MOVE: ", spritePositions);
     } catch (e) {
       console.log(e);
     }

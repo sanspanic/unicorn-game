@@ -13,8 +13,6 @@ import Bump from "../../Assets/Audio/bump.wav";
 const MazeGrid = () => {
   const { gameData, setGameData } = useContext(GameContext);
   const [mazeGrid, setMazeGrid] = useState([]);
-  //const [mazeId, setMazeId] = useState("");
-  //const [spritePositions, setSpritePositions] = useState({});
   const {
     mazeId,
     setMazeId,
@@ -22,12 +20,6 @@ const MazeGrid = () => {
     spritePositions,
     setSpritePositions,
   } = useContext(MoveContext);
-
-  const audio = useRef();
-  const playSound = () => {
-    console.log(audio.current);
-    audio.current.play();
-  };
 
   //determines size of maze based on user input saved in context
   const gridStyle = {
@@ -41,7 +33,6 @@ const MazeGrid = () => {
       try {
         const res = await UnicornApi.getNewMaze(data);
         setMazeId(res);
-        console.log("NEW MAZE ID RETRIEVED: ", res);
       } catch (e) {
         console.log(e);
       }
@@ -62,17 +53,11 @@ const MazeGrid = () => {
       try {
         //retrieves array where each array item represents 1 maze grid cell
         const res = await UnicornApi.getMazeCurrentState(mazeId);
-        console.log("GRID DATA BEFORE HELPER FUNCTION: ", res.data);
         //adds east, south borders + index number to array items
         const completeGridData = addProps(res.data, parseInt(gameData.size));
-        console.log(
-          "COMPLETE GRID DATA AFTER HELPER FUNCTION: ",
-          completeGridData
-        );
         //update state based on API call result
         setMazeGrid(completeGridData);
         setSpritePositions(getSpritePositions(res));
-        console.log("SPRITE POSITIONS AFTER API CALL: ", spritePositions);
       } catch (e) {
         console.log(e);
       }
