@@ -10,9 +10,9 @@ const MazeWrapper = () => {
 
   const mazeWidthClasses = classNames({
     "mx-auto": true,
-    "sm:w-9/12 md:w-6/12 lg:w-5/12 xl:w-4/12": gameData.size <= 17,
-    "md:w-8/12 lg:w-6/12": 17 < gameData.size <= 20,
-    "md:w-10/12 lg:w-7/12 xl:w-6/12": 20 < gameData.size <= 23,
+    "sm:w-9/12 md:w-7/12 lg:w-5/12 xl:w-4/12": gameData.size <= 17,
+    "md:w-8/12 lg:w-6/12 xl:w-5/12": gameData.size > 17 && gameData.size <= 20,
+    "md:w-10/12 lg:w-7/12 xl:w-6/12": gameData.size > 20 && gameData.size <= 23,
     "md-w-11/12 lg:w-10/12 small-cell": gameData.size > 23,
   });
 

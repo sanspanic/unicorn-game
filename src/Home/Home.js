@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import Unicorn from "../Assets/Imgs/Unicorn.png";
 import GameContext from "../Context/GameContext";
+import UnicornImage from "./UnicornImage";
 
 const Home = () => {
   const { gameData, setGameData } = useContext(GameContext);
@@ -15,7 +15,7 @@ const Home = () => {
       </h1>
       <div className="flex-col sm:flex-row flex gap-4">
         <div className="flex flex-col gap-8 font-mono">
-          <img className="w-5/12 sm:w-3/12" src={Unicorn}></img>
+          <UnicornImage />
           <p>
             No, I'm not a privately held startup company valued at over $1
             billion.
