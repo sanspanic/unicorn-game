@@ -3,7 +3,7 @@ import GameContext from "./GameContext";
 
 const GameContextProvider = ({ children }) => {
   const initialState = {
-    status: "won",
+    status: "setup",
     difficulty: 0,
     size: 15,
     name: "",

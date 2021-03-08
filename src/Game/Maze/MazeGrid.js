@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState, useRef } from "react";
 import GameContext from "../../Context/GameContext";
 import UnicornApi from "../../API/UnicornApi";
 import { addProps, getSpritePositions } from "./mazeHelpers";
@@ -6,13 +6,21 @@ import { v4 as uuid } from "uuid";
 import GridCell from "./GridCell";
 import "./Maze.css";
 import MoveButtons from "./Buttons/MoveButtons";
-import { data } from "autoprefixer";
+import Keys from "../Hotkeys/Handlers";
+import MoveContext from "../../Context/MoveContext";
 
 const MazeGrid = () => {
   const { gameData, setGameData } = useContext(GameContext);
   const [mazeGrid, setMazeGrid] = useState([]);
-  const [mazeId, setMazeId] = useState("");
-  const [spritePositions, setSpritePositions] = useState({});
+  //const [mazeId, setMazeId] = useState("");
+  //const [spritePositions, setSpritePositions] = useState({});
+  const {
+    mazeId,
+    setMazeId,
+    handleMove,
+    spritePositions,
+    setSpritePositions,
+  } = useContext(MoveContext);
 
   //determines size of maze based on user input saved in context
   const gridStyle = {
@@ -65,7 +73,15 @@ const MazeGrid = () => {
     setUpNewMaze();
   }, [mazeId]);
 
-  //handles move
+  //sets focus on maze grid to enable hotkeys
+  //unfortunately useRef didn't work so I'm using, inappropriately, useEffect
+  /*   useEffect(() => {
+    if (mazeId === "") return;
+    const Maze = document.querySelector("[tabindex='-1']");
+    Maze.focus();
+  }, [mazeId]); */
+
+  /*   //handles move
   const handleMove = (direction) => {
     const move = async (data) => {
       try {
@@ -103,21 +119,24 @@ const MazeGrid = () => {
     } else if (res.state === "over") {
       setGameData({ ...gameData, status: "over" });
     }
-  };
+  }; */
 
   return (
     <>
-      <MoveButtons handleMove={handleMove} />
-      <div className="Maze-grid mx-auto text-center" style={gridStyle}>
-        {mazeGrid.map((arr) => (
-          <GridCell
-            key={uuid()}
-            borders={arr.slice(0, arr.length)}
-            index={arr[arr.length - 1]}
-            spritePositions={spritePositions}
-          />
-        ))}
-      </div>
+      <Keys>
+        <MoveButtons handleMove={handleMove} />
+
+        <div className="Maze-grid mx-auto text-center" style={gridStyle}>
+          {mazeGrid.map((arr) => (
+            <GridCell
+              key={uuid()}
+              borders={arr.slice(0, arr.length)}
+              index={arr[arr.length - 1]}
+              spritePositions={spritePositions}
+            />
+          ))}
+        </div>
+      </Keys>
     </>
   );
 };
