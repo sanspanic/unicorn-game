@@ -1,52 +1,28 @@
 import React, { useRef } from "react";
 import AudioContext from "./AudioContext";
+import useSound from "use-sound";
 import Bump from "../Assets/Audio/bump.wav";
 import Move from "../Assets/Audio/move.wav";
 import Lose from "../Assets/Audio/lose.wav";
 import Win from "../Assets/Audio/win.wav";
 
 const AudioContextProvider = ({ children }) => {
-  const bumpAudio = useRef();
-  const moveAudio = useRef();
-  const loseAudio = useRef();
-  const winAudio = useRef();
+  //plays on illegal move
+  const [playIllegal] = useSound(Bump, { volume: 0.25 });
 
-  //plays when unicorn makes illegal move
-  const playIllegal = () => {
-    bumpAudio.current.play();
-  };
-
-  //plays when unicorn makes legal move
-  const playLegal = () => {
-    moveAudio.current.play();
-  };
+  //plays on legal move
+  const [playLegal] = useSound(Move, { volume: 0.25 });
 
   //plays on game over
-  const playGameOver = () => {
-    loseAudio.current.play();
-  };
+  const [playGameOver] = useSound(Lose, { volume: 0.25 });
 
   //plays on game won
-  const playGameWon = () => {
-    winAudio.current.play();
-  };
+  const [playGameWon] = useSound(Win, { volume: 0.25 });
 
   return (
     <AudioContext.Provider
-      value={{ playLegal, playIllegal, playGameOver, playGameWon }}
+      value={{ playIllegal, playLegal, playGameOver, playGameWon }}
     >
-      <audio ref={bumpAudio}>
-        <source src={Bump}></source>
-      </audio>
-      <audio ref={moveAudio}>
-        <source src={Move}></source>
-      </audio>
-      <audio ref={loseAudio}>
-        <source src={Lose}></source>
-      </audio>
-      <audio ref={winAudio}>
-        <source src={Win}></source>
-      </audio>
       {children}
     </AudioContext.Provider>
   );
