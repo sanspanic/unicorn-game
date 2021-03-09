@@ -8,8 +8,8 @@ const WinPage = () => {
   const history = useHistory();
 
   const handlePlayAgain = () => {
-    history.push("/");
     playAgain();
+    history.push("/");
   };
 
   return (
@@ -20,7 +20,7 @@ const WinPage = () => {
       <WinUnicornImage />
 
       <button
-        className="shadow-xl py-2 px-3 border-4 border-purple-700 rounded gradient-pink text-white font-mono"
+        className="shadow-xl py-2 px-3 border-2 border-purple-700 rounded gradient-pink text-white font-mono"
         onClick={handlePlayAgain}
       >
         Restart

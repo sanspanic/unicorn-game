@@ -11,7 +11,7 @@ import MoveContext from "../../Context/MoveContext";
 import Bump from "../../Assets/Audio/bump.wav";
 
 const MazeGrid = () => {
-  const { gameData, setGameData } = useContext(GameContext);
+  const { gameData } = useContext(GameContext);
   const [mazeGrid, setMazeGrid] = useState([]);
   const {
     mazeId,
@@ -70,7 +70,7 @@ const MazeGrid = () => {
       <Keys>
         <MoveButtons handleMove={handleMove} />
         <div
-          className="Maze-grid mx-auto text-center bg-white bg-opacity-60"
+          className="Maze-grid mx-auto text-center bg-white bg-opacity-80"
           style={gridStyle}
         >
           {mazeGrid.map((arr) => (

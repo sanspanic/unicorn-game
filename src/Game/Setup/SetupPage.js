@@ -28,7 +28,7 @@ const SetupPage = () => {
       <h1 className="font-mono text-4xl text-center py-10 text-pink-600 font-black">
         Game Setup
       </h1>
-      <div className="setup-bg py-5 md:p-20 border-2 rounded md:px-10 grid grid-cols-8 gap-4 items-center">
+      <div className="bg-clouds py-5 md:p-20 border-2 rounded md:px-10 grid grid-cols-8 gap-4 items-center">
         <div className="col-start-2 col-span-6 md:col-start-2 md:col-span-3">
           <div className="grid grid-cols-2 gap-4 items-center py-5">
             <p className="font-mono text-sm md:text-base">

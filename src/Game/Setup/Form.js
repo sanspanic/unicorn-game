@@ -4,12 +4,12 @@ const Form = ({ handleSubmit, handleChange, formData }) => {
   return (
     <div className="col-start-2 col-span-6 md:col-start-5 md:col-span-3 mx-auto">
       <form
-        className="gradient-orchid font-mono flex flex-col border-2 border-black rounded p-5 gap-4"
+        className="gradient-orchid font-mono flex flex-col border-2 border-black rounded p-5"
         onSubmit={handleSubmit}
       >
         <h3 className="font-mono text-pink-600 py-5">Game Settings</h3>
-        <div className="flex items-center justify-between gap-4">
-          <label className="text-xs" htmlFor="name">
+        <div className="flex items-center justify-between mb-2">
+          <label className="text-xs mr-5" htmlFor="name">
             Name
           </label>
           <select
@@ -26,7 +26,7 @@ const Form = ({ handleSubmit, handleChange, formData }) => {
             <option value="Rarity">Rarity</option>
           </select>
         </div>
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between mb-2">
           <label className="justify-self-start text-xs" htmlFor="difficulty">
             Difficulty
           </label>
@@ -40,7 +40,7 @@ const Form = ({ handleSubmit, handleChange, formData }) => {
             value={formData.difficulty}
           ></input>
         </div>
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between mb-2">
           <label className="justify-self-start text-xs" htmlFor="size">
             Maze Size
           </label>
@@ -55,7 +55,7 @@ const Form = ({ handleSubmit, handleChange, formData }) => {
             value={formData.size}
           ></input>
         </div>
-        <button className="mx-auto gradient-pink px-3 py-2 text-white font-mono rounded shadow-xl border-4 border-purple-600">
+        <button className="mx-auto gradient-pink px-3 py-2 text-white font-mono rounded shadow-xl border-2 border-purple-600">
           Start Game!{" "}
         </button>
       </form>

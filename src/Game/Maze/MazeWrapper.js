@@ -17,10 +17,10 @@ const MazeWrapper = () => {
   });
 
   return (
-    <div className="setup-bg md:h-screen font-mono text-center">
+    <div className="bg-clouds md:h-screen font-mono text-center">
       <h2 className="pt-10 ">
         Help <span className="text-pink-600">{gameData.name}</span> reach the
-        rainbow! Move using arrows, A, W, S, D or buttons.
+        rainbow! Move using arrow keys, WASD or buttons.
       </h2>
       <p className="text-sm  pb-10">
         <ArrowBendUpLeft className="inline " size={24} />

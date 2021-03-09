@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "./Button";
 import {
   ArrowFatLinesUp,
   ArrowFatLinesDown,
@@ -8,31 +9,19 @@ import {
 
 const MoveButtons = ({ handleMove }) => {
   return (
-    <div className="flex justify-center gap-10 mb-2">
-      <button
-        className="gradient-pink border-2 shadow-xl border-purple-600 text-white px-3 py-2 rounded bg-blue-400 p-1"
-        onClick={() => handleMove("east")}
-      >
+    <div className="flex justify-center mb-2">
+      <Button direction="east">
         <ArrowFatLinesRight size={24} />
-      </button>
-      <button
-        className="gradient-pink border-2 shadow-xl border-purple-600 text-white px-3 py-2 rounded bg-blue-400 p-1"
-        onClick={() => handleMove("west")}
-      >
+      </Button>
+      <Button direction="west">
         <ArrowFatLinesLeft size={24} />
-      </button>
-      <button
-        className="gradient-pink border-2 shadow-xl rounded border-purple-600 text-white px-3 py-2 bg-blue-400 p-1"
-        onClick={() => handleMove("south")}
-      >
+      </Button>
+      <Button direction="south">
         <ArrowFatLinesDown size={24} />
-      </button>
-      <button
-        className="gradient-pink border-2 shadow-xl  rounded border-purple-600 text-white px-3 py-2 bg-blue-400 p-1"
-        onClick={() => handleMove("north")}
-      >
+      </Button>
+      <Button direction="north">
         <ArrowFatLinesUp size={24} />
-      </button>
+      </Button>
     </div>
   );
 };
