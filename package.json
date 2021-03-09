@@ -25,6 +25,7 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
+    "test:debug": "react-scripts --inspect-brk test --runInBand",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

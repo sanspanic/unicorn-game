@@ -6,7 +6,6 @@ import { ArrowBendUpLeft } from "phosphor-react";
 
 const MazeWrapper = () => {
   const { gameData, playAgain } = useContext(GameContext);
-  //gameData.size <= 18 sm:w-9/12 md:w-6/12 lg:w-5/12 xl:w-4/12
 
   const mazeWidthClasses = classNames({
     "mx-auto p-3": true,
@@ -32,6 +31,10 @@ const MazeWrapper = () => {
       </p>
       <div className={mazeWidthClasses}>
         <MazeGrid />
+        <div className="flex justify-between">
+          <span>Difficulty: {gameData.difficulty}</span>
+          <span>Size: {gameData.size}</span>
+        </div>
       </div>
     </div>
   );

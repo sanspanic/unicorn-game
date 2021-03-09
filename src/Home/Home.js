@@ -1,13 +1,8 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import GameContext from "../Context/GameContext";
 import UnicornImage from "./UnicornImage";
 
 const Home = () => {
-  const { gameData, setGameData } = useContext(GameContext);
-  const startGameSetup = () => {
-    setGameData({ ...gameData, status: "setup" });
-  };
   return (
     <div className="p-5 h-screen ">
       <h1 className="font-black text-pink-600 text-4xl py-5 sm:py-10">
@@ -36,11 +31,10 @@ const Home = () => {
           <span className="text-pink-600 font-semibold">PILOT</span> me safely
           to the rainbow?
         </p>
-        <Link to="/game">
-          <button className="gradient-pink border-2 border-purple-600 text-white px-3 py-3 shadow-xl rounded">
-            Start game
-          </button>
-        </Link>
+        <button className="gradient-pink border-2 border-purple-600 text-white px-3 py-3 shadow-xl rounded mr-auto">
+          {" "}
+          <Link to="/game"> Yes! Let's go!</Link>
+        </button>
       </div>
     </div>
   );
