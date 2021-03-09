@@ -1,5 +1,5 @@
 import { HotKeys } from "react-hotkeys";
-import React, { useContext, useRef } from "react";
+import React, { useContext } from "react";
 import MoveContext from "../../Context/MoveContext";
 
 const Keys = ({ children }) => {

@@ -15,8 +15,14 @@ const MazeWrapper = () => {
     "md-w-11/12 lg:w-10/12 small-cell": gameData.size > 23,
   });
 
+  const cloudDivHeightClasses = classNames({
+    "bg-clouds font-mono text-center": true,
+    "sm:h-screen": gameData.size < 20,
+    "h-full": gameData.size >= 20,
+  });
+
   return (
-    <div className="bg-clouds md:h-screen font-mono text-center">
+    <div className={cloudDivHeightClasses}>
       <h2 className="pt-10 ">
         Help <span className="text-pink-600">{gameData.name}</span> reach the
         rainbow! Move using arrow keys, WASD or buttons.

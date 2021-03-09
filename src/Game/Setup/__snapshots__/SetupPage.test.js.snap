@@ -31,6 +31,7 @@ exports[`matches snapshot 1`] = `
              navigate the maze towards the Rainbow.
           </p>
           <img
+            alt="maze"
             class="w-10/12"
             src="Maze.png"
           />
@@ -42,6 +43,7 @@ exports[`matches snapshot 1`] = `
             class="react-floater-animated"
           >
             <img
+              alt="small floating unicorn"
               class="w-7/12"
               src="smallUnicorn.png"
             />

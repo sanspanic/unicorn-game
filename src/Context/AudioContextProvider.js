@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import AudioContext from "./AudioContext";
 import useSound from "use-sound";
 import Bump from "../Assets/Audio/bump.wav";

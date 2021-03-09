@@ -17,6 +17,7 @@ exports[`matches snapshot 1`] = `
         class="react-floater-animated"
       >
         <img
+          alt="floating unicorn"
           class="w-5/12 sm:w-3/12"
           src="Unicorn.png"
         />

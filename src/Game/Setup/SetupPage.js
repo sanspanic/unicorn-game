@@ -35,7 +35,7 @@ const SetupPage = () => {
               Help the <span className="text-pink-600">Unicorn</span> navigate
               the maze towards the Rainbow.
             </p>
-            <img className="w-10/12" src={Maze}></img>
+            <img className="w-10/12" src={Maze} alt="maze"></img>
           </div>
           <div className="grid grid-cols-2 gap-4 items-center py-5">
             <SmallUnicorn />

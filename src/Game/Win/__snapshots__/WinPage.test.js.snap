@@ -14,6 +14,7 @@ exports[`matches snapshot 1`] = `
       class="react-floater-animated"
     >
       <img
+        alt="happy unicorn puking rainbow"
         class="mx-auto sm:w-9/12 md:w-6/12 lg:w-4/12"
         src="WinGame.png"
       />

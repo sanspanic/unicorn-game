@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import GameContext from "../Context/GameContext";
-import Home from "../Home/Home";
 import WinPage from "./Win/WinPage";
 import LosePage from "./Lose/LosePage";
 import MazeWrapper from "./Maze/MazeWrapper";
@@ -10,7 +9,7 @@ import SetupPage from "./Setup/SetupPage";
 const Game = () => {
   const { gameData } = useContext(GameContext);
   return (
-    <div>
+    <div className="h-full">
       {gameData.status === "setup" && <SetupPage />}
       {gameData.status === "active" && <MazeWrapper />}
       {gameData.status === "won" && <WinPage />}

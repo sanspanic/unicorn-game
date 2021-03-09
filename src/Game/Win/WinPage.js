@@ -1,10 +1,10 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import GameContext from "../../Context/GameContext";
-import { useHistory, Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import WinUnicornImage from "./WinUnicornImage";
 
 const WinPage = () => {
-  const { playAgain, gameData } = useContext(GameContext);
+  const { playAgain } = useContext(GameContext);
   const history = useHistory();
 
   const handlePlayAgain = () => {

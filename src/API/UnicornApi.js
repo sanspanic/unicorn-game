@@ -5,14 +5,14 @@ const BASE_URL = "https://ponychallenge.trustpilot.com";
 
 class UnicornApi {
   static async request(endpoint, data = {}, method = "get") {
-    console.log(
+    /*     console.log(
       "API call to endpoint",
       endpoint,
       "data sent: ",
       data,
       "method: ",
       method
-    );
+    ); */
 
     const url = `${BASE_URL}/${endpoint}`;
     const params = method === "post" ? data : {};
@@ -21,8 +21,9 @@ class UnicornApi {
       return (await axios({ url, method, data, params })).data;
     } catch (err) {
       console.error("API Error:", err.response);
-      let message = err.response.data.error;
-      throw Array.isArray(message) ? message : [message];
+      let message = err.response.data;
+      throw message;
+      //throw Array.isArray(message) ? message : [message];
     }
   }
 

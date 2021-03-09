@@ -3,7 +3,7 @@
 exports[`matches snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="bg-clouds md:h-screen font-mono text-center"
+    class="bg-clouds font-mono text-center sm:h-screen"
   >
     <h2
       class="pt-10 "

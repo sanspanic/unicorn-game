@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState, useRef } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import GameContext from "../../Context/GameContext";
 import UnicornApi from "../../API/UnicornApi";
 import { addProps, getSpritePositions } from "./mazeHelpers";
@@ -8,7 +8,6 @@ import "./Maze.css";
 import MoveButtons from "./Buttons/MoveButtons";
 import Keys from "../Hotkeys/Handlers";
 import MoveContext from "../../Context/MoveContext";
-import Bump from "../../Assets/Audio/bump.wav";
 
 const MazeGrid = () => {
   const { gameData } = useContext(GameContext);
@@ -44,7 +43,7 @@ const MazeGrid = () => {
       "maze-player-name": gameData.name,
       difficulty: parseInt(gameData.difficulty),
     });
-  }, []);
+  }, [gameData.size, gameData.name, gameData.difficulty, setMazeId]);
 
   //draws new maze after maze ID changes
   useEffect(() => {
@@ -63,7 +62,7 @@ const MazeGrid = () => {
       }
     };
     setUpNewMaze();
-  }, [mazeId]);
+  }, [mazeId, setSpritePositions, gameData.size]);
 
   return (
     <>
