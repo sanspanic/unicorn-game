@@ -7,9 +7,9 @@ Whilst remaining true to the original equine theme, I've decided to give the cha
 
 ## Scripts
 
-`npm start` to run app in development mode on [http://localhost:3000](http://localhost:3000)
-
 `npm install` to install dependencies 
+
+`npm start` to run app in development mode on [http://localhost:3000](http://localhost:3000)
 
 `npm test` to run tests in interactive watch mode
 
@@ -57,8 +57,9 @@ Whilst remaining true to the original equine theme, I've decided to give the cha
 
 ####Maze Rendering
 * maze drawing utilises CSS properties `gridTemplateColumns` and `border-top`, `border-bottom`, `border-left`, `border-right`
-* API call retrieves grid data, this data then transformed using helper functions to include additional items `east` and `south` wherever appropriate
-* index number used to render sprites
+* API call retrieves grid data array, which is then transformed using helper functions to include additional items `east` and `south` wherever appropriate, as well as `index number`
+* transformed grid data array mapped over to render individual `GridCell` components, passing down `borders`, `index` and `sprite positions` as props
+* `GridCell` uses props to conditionally render borders & sprites
 
 ####Use of external libraries
 I tried to balance the recommended approach of "not reinventing the wheel" with demonstrating my capability to write code independendly. Whilst I leant heavily into external resources to handle movement and sound, I chose to refrain from using an external library and instead demonstrate original code writing in other places, for example in the `Form` component.
@@ -69,7 +70,7 @@ All resources used are royalty-free.
 Icons: [phosphor-icons](https://phosphoricons.com/)  
 SVG background: [bg-jar](https://bgjar.com/)  
 Pixel Art: [pinclipart](https://www.pinclipart.com/), [pngkit](https://www.pngkit.com/)  
-Conic gradient: [conic.style](https://conic.style/)
+Conic gradient: [conic.style](https://conic.style/)  
 Audio Effects: [mixkit](https://mixkit.co/free-sound-effects/game)
 
 ## Limitations
