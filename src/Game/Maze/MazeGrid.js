@@ -8,10 +8,12 @@ import "./Maze.css";
 import MoveButtons from "./Buttons/MoveButtons";
 import Keys from "../Hotkeys/Handlers";
 import MoveContext from "../../Context/MoveContext";
+import RotatingHorse from "./Spinner";
 
 const MazeGrid = () => {
   const { gameData } = useContext(GameContext);
   const [mazeGrid, setMazeGrid] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const {
     mazeId,
     setMazeId,
@@ -30,7 +32,9 @@ const MazeGrid = () => {
     //retrieves maze ID
     const getMazeID = async (data) => {
       try {
+        setIsLoading(true);
         const res = await UnicornApi.getNewMaze(data);
+        setIsLoading(false);
         setMazeId(res);
       } catch (e) {
         console.log(e);
@@ -68,19 +72,23 @@ const MazeGrid = () => {
     <>
       <Keys>
         <MoveButtons handleMove={handleMove} />
-        <div
-          className="Maze-grid mx-auto text-center bg-white bg-opacity-80"
-          style={gridStyle}
-        >
-          {mazeGrid.map((arr) => (
-            <GridCell
-              key={uuid()}
-              borders={arr.slice(0, arr.length)}
-              index={arr[arr.length - 1]}
-              spritePositions={spritePositions}
-            />
-          ))}
-        </div>
+        {isLoading ? (
+          <RotatingHorse />
+        ) : (
+          <div
+            className="Maze-grid mx-auto text-center bg-white bg-opacity-80"
+            style={gridStyle}
+          >
+            {mazeGrid.map((arr) => (
+              <GridCell
+                key={uuid()}
+                borders={arr.slice(0, arr.length)}
+                index={arr[arr.length - 1]}
+                spritePositions={spritePositions}
+              />
+            ))}
+          </div>
+        )}
       </Keys>
     </>
   );
