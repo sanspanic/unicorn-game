@@ -5,15 +5,6 @@ const BASE_URL = "https://ponychallenge.trustpilot.com";
 
 class UnicornApi {
   static async request(endpoint, data = {}, method = "get") {
-    console.log(
-      "API call to endpoint",
-      endpoint,
-      "data sent: ",
-      data,
-      "method: ",
-      method
-    );
-
     const url = `${BASE_URL}/${endpoint}`;
     const params = method === "post" ? data : {};
 

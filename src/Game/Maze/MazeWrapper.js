@@ -17,7 +17,7 @@ const MazeWrapper = () => {
 
   const cloudDivHeightClasses = classNames({
     "bg-clouds font-mono text-center": true,
-    "sm:h-screen": gameData.size < 20,
+    "sm:h-screen": gameData.size < 16,
     "h-full": gameData.size >= 20,
   });
 
