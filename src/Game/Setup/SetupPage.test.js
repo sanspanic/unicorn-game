@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { render, act } from "@testing-library/react";
 import SetupPage from "./SetupPage";
 import GameContextProvider from "../../Context/GameContextProvider";
 

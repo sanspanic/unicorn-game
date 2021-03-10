@@ -1,5 +1,5 @@
 import React from "react";
-import { render, fireEvent } from "@testing-library/react";
+import { render, fireEvent, act } from "@testing-library/react";
 import Game from "../Game";
 import SetupPage from "./SetupPage";
 import GameContextProvider from "../../Context/GameContextProvider";
@@ -39,6 +39,7 @@ describe("form submission works", () => {
     fireEvent.click(submitButton);
 
     //test if maze component rendered after form submission
+    //maze component will call API on render and error out, unfortunately, I don't know how to stop this
 
     expect(submitButton).not.toBeInTheDocument();
 
