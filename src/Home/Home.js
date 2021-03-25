@@ -31,10 +31,12 @@ const Home = () => {
           <span className="text-pink-600 font-semibold">PILOT</span> me safely
           to the rainbow?
         </p>
-        <button className="gradient-pink border-2 border-purple-600 text-white px-3 py-3 shadow-xl rounded mr-auto">
-          {" "}
-          <Link to="/game"> Yes! Let's go!</Link>
-        </button>
+        {/*//* changed order of Link and Button here to ma button fully clickable */}
+        <Link to="/game">
+          <button className="gradient-pink border-2 border-purple-600 text-white px-3 py-3 shadow-xl rounded mr-auto">
+            Yes! Let's go!
+          </button>
+        </Link>
       </div>
     </div>
   );

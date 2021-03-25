@@ -5,6 +5,7 @@ export const addProps = (arr, size) => {
   for (let cell of arr) {
     //adds east and south
     const index = arr.indexOf(cell);
+
     if ((index + 1) % size === 0) {
       cell.push("east");
     }

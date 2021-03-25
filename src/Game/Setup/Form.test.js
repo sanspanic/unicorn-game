@@ -30,13 +30,17 @@ describe("form submission works", () => {
 
     //change difficulty, name & size
 
-    fireEvent.change(difficultyInput, { target: { value: 10 } });
-    fireEvent.change(nameInput, { target: { value: "Fluttershy" } });
-    fireEvent.change(sizeInput, { target: { value: 20 } });
+    act(() => {
+      fireEvent.change(difficultyInput, { target: { value: 10 } });
+      fireEvent.change(nameInput, { target: { value: "Fluttershy" } });
+      fireEvent.change(sizeInput, { target: { value: 20 } });
+    });
 
     //submit
 
-    fireEvent.click(submitButton);
+    act(() => {
+      fireEvent.click(submitButton);
+    });
 
     //test if maze component rendered after form submission
     //maze component will call API on render and error out, unfortunately, I don't know how to stop this

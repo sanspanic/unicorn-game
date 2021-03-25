@@ -6,15 +6,16 @@ const BASE_URL = "https://ponychallenge.trustpilot.com";
 class UnicornApi {
   static async request(endpoint, data = {}, method = "get") {
     const url = `${BASE_URL}/${endpoint}`;
+    //!below line is obsolete
     const params = method === "post" ? data : {};
 
     try {
+      //!params is obsolete
       return (await axios({ url, method, data, params })).data;
     } catch (err) {
-      console.error("API Error:", err.response);
+      console.error("API Error coming from CLASS API:", err.response);
       let message = err.response.data;
       throw message;
-      //throw Array.isArray(message) ? message : [message];
     }
   }
 
