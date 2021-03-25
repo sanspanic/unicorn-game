@@ -75,7 +75,11 @@ Audio Effects: [mixkit](https://mixkit.co/free-sound-effects/game)
 
 ## Limitations
 
-**Testing**: I am aware that the app lacks meaningful integration testing or end-to-end testing. I look forward to levelling up my test game in the future by learning about mocking as well as end-to-end testing libraries such as Cypress. Nevertheless, I hope to have demonstrated a good pre-existing grasp of testing fundamentals, having included unit tests (e.g. in `src/Game/Maze/mazeHelpers.test.js`) as well as smoke tests and snapshots. 
+**Testing**: I am aware that the app lacks meaningful integration testing or end-to-end testing. I look forward to levelling up my test game in the future by learning about mocking as well as end-to-end testing libraries such as Cypress. Nevertheless, I hope to have demonstrated a good pre-existing grasp of testing fundamentals, having included unit tests (e.g. in `src/Game/Maze/mazeHelpers.test.js`) as well as smoke tests and snapshots.
+
+## Screengrab 
+
+![screengrab](./src/Assets/Imgs/screengrab.png)
 
 
 
