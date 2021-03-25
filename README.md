@@ -38,11 +38,11 @@ Whilst remaining true to the original equine theme, I've decided to give the cha
 
 ## Approach 
 
-####API calls
+#### API calls
 * handled in `src/API/UnicornAPI.js`, which includes a static API class tying together all methods used to communicate with API
 * prevents code duplication and separates concerns
 
-####Components
+#### Components
 * `App` ➡️ `Context Providers`➡️ `Routes`
 * `Routes` includes Switch statement to Homepage (`/`), Game Page (`/game`) and Redirect to Homepage in case of typo following base URL
 * route `/game` renders `Game` component
@@ -52,16 +52,16 @@ Whilst remaining true to the original equine theme, I've decided to give the cha
 	* `WinPage` where user can start new game and be redirected to homepage
 	* `LosePage` as above
 
-####State management
+#### State management
 * state is managed using React's Context API & split into 3 providers: `GameContextProvider`, `AudioContextProvider`, `MoveContextProvider`
 
-####Maze Rendering
+#### Maze Rendering
 * maze drawing utilises CSS properties `gridTemplateColumns` and `border-top`, `border-bottom`, `border-left`, `border-right`
 * API call retrieves grid data array, which is then transformed using helper functions to include additional items `east` and `south` wherever appropriate, as well as `index number`
 * transformed grid data array mapped over to render individual `GridCell` components, passing down `borders`, `index` and `sprite positions` as props
 * `GridCell` uses props to conditionally render borders & sprites
 
-####Use of external libraries
+#### Use of external libraries
 I tried to balance the recommended approach of "not reinventing the wheel" with demonstrating my capability to write code independendly. Whilst I leant heavily into external resources to handle movement and sound, I chose to refrain from using an external library and instead demonstrate original code writing in other places, for example in the `Form` component.
 
 ## Resources
